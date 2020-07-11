@@ -6,7 +6,18 @@ const operacaoController = require('./controllers/operacao')
 
 const routes = express.Router();
 
-routes.get('/teste', loginController.index)
+routes.post('/login', loginController.create)
+routes.post('/checklogin', loginController.check)
+routes.get('/login', loginController.index)
+
+routes.post('/categorias', categoriaController.create)
+routes.get('/categorias', categoriaController.index)
+routes.post('/checkcategorias', categoriaController.check)
+
+routes.post('/contascorrentes', contaController.create)
+routes.get('/contascorrentes', contaController.index)
+routes.post('/checkcontascorrentes', contaController.check)
+
 /*
 routes.post('/api/post', postController.create)
 routes.get('/api/post', postController.index)
